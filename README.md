@@ -52,10 +52,13 @@ make -j4
 cd
 #Create a folder for the application
 mkdir PicoKeyerTerminal
+
 #go to the application folder
 cd PicoKeyerTerminal
+
 #copy the executable to the application folder
 cp ~/src/PicoKeyerTerminal/build/PicoKeyerTerminal .
+
 #Ensure that it is set to be executable
 chmod +x PicoKeyerTerminal
 #create a simple startup script for the application
