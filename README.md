@@ -55,14 +55,14 @@ mkdir PicoKeyerTerminal
 ## go to the application folder
 cd PicoKeyerTerminal
 ## copy the executable to the application folder
-cp ~/src/PicoKeyerTerminal/build/PicoKeyer .
+cp ~/src/PicoKeyerTerminal/build/PicoKeyerTerminal .
 ## Ensure that it is set to be executable
-chmod +x PicoKeyer
+chmod +x PicoKeyerTerminal
 ## create a simple startup script for the application
 echo "#!/bin/bash">PicoKeyerTerminal.sh
 echo "# Start the Pico Keyer Terminal UI" >> PicoKeyerTerminal.sh
 echo "export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH" >> PicoKeyerTerminal.sh
-echo "./PicoKeyer">> PicoKeyerTerminal.sh
+echo "./PicoKeyerTerminal PicoKeyerTerminal.sh
 echo "exit 0" >> PicoKeyerTerminal.sh
 ## Ensure that the startup script is also executable
 chmod +x PicoKeyerTerminal.sh
