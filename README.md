@@ -19,53 +19,53 @@ Building from the command line using qmake:
 
 RPi/Debian-based Linux users should install the packages:
 
-# build tools for compilers and make tools
+## build tools for compilers and make tools
 build-essential
-# the basic libraries and tools for building Qt 5 qmake projects
+## the basic libraries and tools for building Qt 5 qmake projects
 qtbase5-dev
-# the development files and runtime library for serial ports
-# in Qt5
+## the development files and runtime library for serial ports
+## in Qt5
 libqt5serialport5-dev
 
-# Doing a shadow build
-# go to the home folder
+## Doing a shadow build
+## go to the home folder
 cd 
-# make src folder if it does not already exists
+## make src folder if it does not already exists
 mkdir src
-# go to the src folder
+## go to the src folder
 cd src
-# clone the repository
+## clone the repository
 git clone https://github.com/guitarpicva/PicoKeyerTerminal.git
-# go to the cloned source code folder
+## go to the cloned source code folder
 cd PicoKeyerTerminal
-# make a shadow build folder
+## make a shadow build folder
 mkdir build
-# go to the build folder
+## go to the build folder
 cd build
-# run qmake to build the Makefile
+## run qmake to build the Makefile
 qmake ../
-# make the application
+## make the application
 make -j4
 
-# The executable is PicoKeyerTerminal in the build folder.
-# Create a home for it and assocated start script
-# go to the home folder
+## The executable is PicoKeyerTerminal in the build folder.
+## Create a home for it and assocated start script
+## go to the home folder
 cd
-# Create a folder for the application
+## Create a folder for the application
 mkdir PicoKeyerTerminal
-# go to the application folder
+## go to the application folder
 cd PicoKeyerTerminal
-# copy the executable to the application folder
+## copy the executable to the application folder
 cp ~/src/PicoKeyerTerminal/build/PicoKeyer .
-# Ensure that it is set to be executable
+## Ensure that it is set to be executable
 chmod +x PicoKeyer
-# create a simple startup script for the application
+## create a simple startup script for the application
 echo "#!/bin/bash">PicoKeyerTerminal.sh
 echo "# Start the Pico Keyer Terminal UI" >> PicoKeyerTerminal.sh
 echo "export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH" >> PicoKeyerTerminal.sh
 echo "./PicoKeyer">> PicoKeyerTerminal.sh
 echo "exit 0" >> PicoKeyerTerminal.sh
-# Ensure that the startup script is also executable
+## Ensure that the startup script is also executable
 chmod +x PicoKeyerTerminal.sh
 
 Use the PicoKeyerTerminal.sh file to start the program from the
