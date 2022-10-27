@@ -19,15 +19,14 @@ Building from the command line using qmake:
 
 RPi/Debian-based Linux users should install the packages:
 
-## build tools for compilers and make tools
+# Build tools for compilers and make tools.
+## The basic libraries and tools for building Qt 5 qmake projects.
+## The development files and runtime library for serial ports in Qt5.
 build-essential
-## the basic libraries and tools for building Qt 5 qmake projects
 qtbase5-dev
-## the development files and runtime library for serial ports
-## in Qt5
 libqt5serialport5-dev
 
-## Doing a shadow build
+# Doing a shadow build
 ## go to the home folder
 cd 
 ## make src folder if it does not already exists
