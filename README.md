@@ -11,11 +11,13 @@ work along with the Pico Keyer project.
 
 This is a qmake project and ideally is used inside
 of the Qt Creator IDE.  Open the PicoKeyer.pro file from
-Qt Creator and build the project.  See below for Linux
-deployment steps.  For Windows, simply run the executable
-created in Qt Creator's build folder for the project.
+Qt Creator and build the project.
 
-Building from the command line using qmake:
+For Windows read the documentation
+for the Qt windeployqt.exe process to create a deployable
+folder for the program.
+
+## Building from the Linux command line using qmake:
 
 RPi/Debian-based Linux users should install the packages:
 
