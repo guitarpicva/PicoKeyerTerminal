@@ -53,10 +53,10 @@ mkdir PicoKeyerTerminal
 cd PicoKeyerTerminal
 cp ~/src/PicoKeyerTerminal/build/PicoKeyerTerminal .
 chmod +x PicoKeyerTerminal
-echo "#!/bin/bash">PicoKeyerTerminal.sh
+echo "#!/bin/sh">PicoKeyerTerminal.sh
 echo "# Start the Pico Keyer Terminal UI" >> PicoKeyerTerminal.sh
 echo "export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH" >> PicoKeyerTerminal.sh
-echo "./PicoKeyerTerminal PicoKeyerTerminal.sh
+echo "./PicoKeyerTerminal &" >> PicoKeyerTerminal.sh
 echo "exit 0" >> PicoKeyerTerminal.sh
 chmod +x PicoKeyerTerminal.sh
 ```
