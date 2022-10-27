@@ -19,15 +19,19 @@ Building from the command line using qmake:
 
 RPi/Debian-based Linux users should install the packages:
 
-# Build tools for compilers and make tools.
+Build tools for compilers and make tools.
 The basic libraries and tools for building Qt 5 qmake projects.
 The development files and runtime library for serial ports in Qt5.
 
+```
 build-essential
 qtbase5-dev
 libqt5serialport5-dev
+```
 
 ## Doing a shadow build
+
+```
 cd 
 mkdir src
 cd src
@@ -37,10 +41,13 @@ mkdir build
 cd build
 qmake ../
 make -j4
+```
 
 The executable is PicoKeyerTerminal in the build folder.
 
 ##Create a home for it and assocated start script
+
+```
 cd
 mkdir PicoKeyerTerminal
 cd PicoKeyerTerminal
@@ -52,6 +59,7 @@ echo "export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH" >> PicoKeyerTerminal.sh
 echo "./PicoKeyerTerminal PicoKeyerTerminal.sh
 echo "exit 0" >> PicoKeyerTerminal.sh
 chmod +x PicoKeyerTerminal.sh
+```
 
 Use the PicoKeyerTerminal.sh file to start the program from the
 command line or from a shortcut in the desktop environment.
