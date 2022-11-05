@@ -39,6 +39,13 @@
      </widget>
     </item>
     <item>
+     <widget class="QPlainTextEdit" name="plainTextEdit_2">
+      <property name="placeholderText">
+       <string>Type recevied text here and click Update Conversation to add to the conversation</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QGroupBox" name="groupBox">
       <property name="title">
        <string/>
@@ -56,6 +63,19 @@
        <property name="bottomMargin">
         <number>3</number>
        </property>
+       <item>
+        <widget class="QPushButton" name="updateConversationButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Update Converstaion</string>
+         </property>
+        </widget>
+       </item>
        <item>
         <widget class="QPushButton" name="clearButton">
          <property name="sizePolicy">

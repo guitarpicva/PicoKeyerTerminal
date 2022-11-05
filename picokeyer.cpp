@@ -159,11 +159,7 @@ void PicoKeyer::on_timeout()
 
 void PicoKeyer::setNewWPM()
 {
-//    if(tim) {
-//        tim->stop();
-//        tim->setInterval((int) ((1200/i_wpm) * 20));
-//        s.setValue("interval", tim->interval());
-//    }
+    // use the configured WPM value and ensure it gets saved
     QString srate = "@" + QString::number(i_wpm) + "\r";
     if(sport) {
         ui->plainTextEdit->appendPlainText("WPM RATE SET TO " + QString::number(i_wpm));
@@ -173,5 +169,12 @@ void PicoKeyer::setNewWPM()
         s.setValue("wpm", i_wpm);
     }
     wpmLabel->setText(QString::number(i_wpm) + " WPM");
+}
+
+
+void PicoKeyer::on_updateConversationButton_clicked()
+{
+    ui->plainTextEdit->appendPlainText(ui->plainTextEdit_2->toPlainText());
+    ui->plainTextEdit->moveCursor(QTextCursor::End);
 }
 

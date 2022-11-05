@@ -30,6 +30,8 @@ private slots:
     void on_timeout();
     void connectToKeyer();
     void setNewWPM();
+    void on_updateConversationButton_clicked();
+
 private:
     Ui::PicoKeyer *ui;
     QLabel *wpmLabel;
