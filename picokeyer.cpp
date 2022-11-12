@@ -182,6 +182,17 @@ void PicoKeyer::on_wpmDial_sliderReleased()
     // send the new value to the keyer as WPM
     i_wpm = ui->wpmDial->value();
     setNewWPM();
-    ui->wpmLabel->setText(QString::number(i_wpm) + " WPM");
+    wpmLabel->setText(QString::number(i_wpm) + " WPM");
+}
+
+void PicoKeyer::on_wpmDial_valueChanged(int value)
+{
+    wpmLabel->setText(QString::number(value) + " WPM");
+}
+
+
+void PicoKeyer::on_plainTextEdit_2_blockCountChanged(int newBlockCount)
+{
+
 }
 

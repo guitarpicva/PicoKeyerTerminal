@@ -34,6 +34,10 @@ private slots:
 
     void on_wpmDial_sliderReleased();
 
+    void on_wpmDial_valueChanged(int value);
+
+    void on_plainTextEdit_2_blockCountChanged(int newBlockCount);
+
 private:
     Ui::PicoKeyer *ui;
     QLabel *wpmLabel;
