@@ -171,10 +171,17 @@ void PicoKeyer::setNewWPM()
     wpmLabel->setText(QString::number(i_wpm) + " WPM");
 }
 
-
 void PicoKeyer::on_updateConversationButton_clicked()
 {
     ui->plainTextEdit->appendPlainText(ui->plainTextEdit_2->toPlainText());
     ui->plainTextEdit->moveCursor(QTextCursor::End);
+}
+
+void PicoKeyer::on_wpmDial_sliderReleased()
+{
+    // send the new value to the keyer as WPM
+    i_wpm = ui->wpmDial->value();
+    setNewWPM();
+    ui->wpmLabel->setText(QString::number(i_wpm) + " WPM");
 }
 

@@ -32,6 +32,8 @@ private slots:
     void setNewWPM();
     void on_updateConversationButton_clicked();
 
+    void on_wpmDial_sliderReleased();
+
 private:
     Ui::PicoKeyer *ui;
     QLabel *wpmLabel;
