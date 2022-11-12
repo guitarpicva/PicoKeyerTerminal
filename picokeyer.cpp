@@ -189,10 +189,3 @@ void PicoKeyer::on_wpmDial_valueChanged(int value)
 {
     wpmLabel->setText(QString::number(value) + " WPM");
 }
-
-
-void PicoKeyer::on_plainTextEdit_2_blockCountChanged(int newBlockCount)
-{
-
-}
-
