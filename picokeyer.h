@@ -31,7 +31,6 @@ private slots:
     void connectToKeyer();
     void setNewWPM();
     void on_updateConversationButton_clicked();
-    void on_wpmDial_sliderReleased();
     void on_wpmDial_valueChanged(int value);
 
 private:
@@ -45,6 +44,6 @@ private:
     int i_interval = 2000;
     int i_baudRate = 115200;
     int i_wpm = 20;
-    QString s_sport = "COM3";
+    QString s_sport = "ttyUSB0";
 };
 #endif // PICOKEYER_H

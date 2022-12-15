@@ -76,31 +76,13 @@ padding:3px 3px;
         <number>3</number>
        </property>
        <item row="0" column="1">
-        <widget class="QSlider" name="wpmDial">
-         <property name="toolTip">
-          <string>Drag the slider to set the Words Per Minute value</string>
-         </property>
-         <property name="minimum">
-          <number>5</number>
-         </property>
+        <widget class="QSpinBox" name="wpmDial">
          <property name="maximum">
           <number>60</number>
          </property>
-         <property name="value">
-          <number>15</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="tickPosition">
-          <enum>QSlider::NoTicks</enum>
-         </property>
-         <property name="tickInterval">
-          <number>5</number>
-         </property>
         </widget>
        </item>
-       <item row="0" column="2">
+       <item row="0" column="3">
         <widget class="QPushButton" name="updateConversationButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -122,7 +104,7 @@ padding:3px 3px;
          </property>
         </widget>
        </item>
-       <item row="0" column="3">
+       <item row="0" column="4">
         <widget class="QPushButton" name="clearButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -144,6 +126,19 @@ padding:3px 3px;
           <string>WPM</string>
          </property>
         </widget>
+       </item>
+       <item row="0" column="2">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
@@ -175,7 +170,7 @@ padding:3px 3px;
      <x>0</x>
      <y>0</y>
      <width>505</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

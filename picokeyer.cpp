@@ -46,8 +46,8 @@ void PicoKeyer::on_lineEdit_returnPressed()
         for(int i = 0; i < out.length(); i++) {
             sport->putChar(out.at(i).toLatin1());
         }
-        ui->plainTextEdit->appendPlainText("SENDING: ");
         ui->plainTextEdit->moveCursor(QTextCursor::End);
+        ui->plainTextEdit->appendPlainText("SENDING: ");
         sport->putChar('\r');
         sport->flush();
     }
@@ -66,6 +66,8 @@ void PicoKeyer::connectToKeyer()
             ui->plainTextEdit->moveCursor(QTextCursor::End);
         }
     });
+    s_sport = s.value("serialPort", "ttyUSB0").toString();
+    s.setValue("serialPort", s_sport);
     sport->setPortName(s_sport);
     if(sport->open(QIODevice::ReadWrite)) {
         ui->plainTextEdit->appendPlainText("SERIAL PORT " + s_sport + " OPENED");
@@ -150,7 +152,7 @@ void PicoKeyer::on_timeout()
     if(inbytes.length() > 0) {
         //qDebug()<<"inbytes:"<<inbytes;
         QString out = inbytes;
-        out.replace('\0', '?');
+        out.replace('\0', '?').replace(">", "AR").replace("+", "KN");
         inbytes.clear();
         ui->plainTextEdit->insertPlainText(out);
         ui->plainTextEdit->moveCursor(QTextCursor::End);
@@ -177,15 +179,10 @@ void PicoKeyer::on_updateConversationButton_clicked()
     ui->plainTextEdit->moveCursor(QTextCursor::End);
 }
 
-void PicoKeyer::on_wpmDial_sliderReleased()
+void PicoKeyer::on_wpmDial_valueChanged(int value)
 {
     // send the new value to the keyer as WPM
     i_wpm = ui->wpmDial->value();
     setNewWPM();
-    wpmLabel->setText(QString::number(i_wpm) + " WPM");
-}
-
-void PicoKeyer::on_wpmDial_valueChanged(int value)
-{
-    wpmLabel->setText(QString::number(value) + " WPM");
+    wpmLabel->setText(QString::number(i_wpm) + " W");
 }
