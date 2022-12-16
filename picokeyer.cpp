@@ -5,7 +5,7 @@
 #include <QMessageBox>
 #include <QSerialPortInfo>
 
-//#include <QDebug>
+#include <QDebug>
 
 PicoKeyer::PicoKeyer(QWidget *parent)
     : QMainWindow(parent)
@@ -150,8 +150,14 @@ void PicoKeyer::on_timeout()
 {
     tim->stop();
     if(inbytes.length() > 0) {
-        //qDebug()<<"inbytes:"<<inbytes;
+        qDebug()<<"inbytes:"<<inbytes;
         QString out = inbytes;
+        QString in = inbytes.trimmed();
+        if(in.mid(3, 3) == "WPM") {
+            // wpm notification from keyer, so update UI
+            ui->wpmDial->setValue(in.mid(0, 2).toInt());
+            wpmLabel->setText(in.mid(0, 2) + " WPM");
+        }
         out.replace('\0', '?').replace(">", "AR").replace("+", "KN");
         inbytes.clear();
         ui->plainTextEdit->insertPlainText(out);
@@ -170,6 +176,7 @@ void PicoKeyer::setNewWPM()
         sport->flush();
         s.setValue("wpm", i_wpm);
     }
+    ui->wpmDial->setValue(i_wpm);
     wpmLabel->setText(QString::number(i_wpm) + " WPM");
 }
 
@@ -182,7 +189,7 @@ void PicoKeyer::on_updateConversationButton_clicked()
 void PicoKeyer::on_wpmDial_valueChanged(int value)
 {
     // send the new value to the keyer as WPM
-    i_wpm = ui->wpmDial->value();
+    i_wpm = value;
     setNewWPM();
     wpmLabel->setText(QString::number(i_wpm) + " W");
 }
